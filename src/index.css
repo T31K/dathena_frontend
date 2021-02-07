@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.abs{
+  position: absolute;
+}
+.home{
+  margin: 50px auto;
+  width: 50%;
+  border: 2px solid brown;
+  box-shadow: 0 11px 40px 6px rgb(71 103 179 / 7%), 0 6px 14px 0 rgb(71 103 179 / 7%);
+  padding: 24px 32px;
+  border-style: none;
+  border-width: 1px;
+  border-color: #dde0ea;
+  border-radius: 4px;
+}

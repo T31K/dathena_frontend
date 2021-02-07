@@ -1,13 +1,16 @@
-import Particles from 'react-particles-js';
-import data from "./particlesconfig.json"
+import React from 'react'
+import { BrowserRouter as Router, Switch } from 'react-router-dom'
 
-function App() {
+import routes from './routes'
+import Navbar from './components/Navbar'
+
+export default function App () {
   return (
-    <div className="App">
-    <h1>hello</h1>
-    <Particles params={data}/>
-    </div>
-  );
+    <Router>
+      <Navbar />
+      <main>
+        <Switch>{routes}</Switch>
+      </main>
+    </Router>
+  )
 }
-
-export default App;
