@@ -1,25 +1,31 @@
-import React from "react";
-import { Navbar, Nav, Button, NavDropdown, FormControl, Form } from "react-bootstrap";
+import {ButtonIcon,} from 'react-rainbow-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faQuestion, faTrash, faPlus, faHome} from '@fortawesome/free-solid-svg-icons';
+import {Link} from "react-router-dom"
+import axiosInstance from "../utils/api"
 
-export default function  Navbars(){
+const Navbar = (selection) => {
+  const deleteSelectedUser = () => {
+    let data = selection.selection
+    for (let i = 0 ; i < data.length ; i++){
+      axiosInstance.delete(`${data[i].id}/`)
+   }
+   window.location.reload()
+  }
+
   return(
   <>
-  <Navbar bg="light">
-    <Navbar.Brand href="/">
-      <img
-        src="/logo.png"
-        width="150"
-        height="50"
-        className="d-inline-block align-top"
-        alt="React Bootstrap logo"
-      />
-    </Navbar.Brand>
-    <Nav className="mr-auto">
-      <Nav.Link href="/">Home</Nav.Link>
-      <Nav.Link href="/create">Create</Nav.Link>
-      <Nav.Link href="/update">Update</Nav.Link>
-    </Nav>
-  </Navbar>
+  <div>
+    <div className="rainbow">
+      <Link to="/"><ButtonIcon variant="border-filled"  icon={<FontAwesomeIcon icon={faHome} />} /></Link>
+      <Link to="/create"><ButtonIcon variant="border-filled"  icon={<FontAwesomeIcon icon={faPlus} />} /></Link>
+      <Link to="/"><ButtonIcon variant="border-filled"  icon={<FontAwesomeIcon icon={faQuestion} />} /></Link>
+      <ButtonIcon variant="border-filled"  icon={<FontAwesomeIcon icon={faTrash} />} onClick={deleteSelectedUser}/>
+    </div>
+  </div>
   </>
   )
 }
+
+export default Navbar
+
