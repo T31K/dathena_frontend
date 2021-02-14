@@ -2,15 +2,15 @@ import React from 'react'
 import { BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import routes from './routes'
-import Navbar from './components/Navbar'
+import Wrapper from './components/Wrapper'
 
 export default function App () {
   return (
     <Router>
-      <Navbar />
-      <main>
+      <Wrapper/>
+        <main>
         <Switch>{routes}</Switch>
-      </main>
+        </main>
     </Router>
   )
 }
