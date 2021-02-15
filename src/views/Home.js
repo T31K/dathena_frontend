@@ -7,10 +7,10 @@ import Navbar from '../components/Navbar'
 import "../App.css"
 
 import { TableWithBrowserPagination, Column, MenuItem, Card, Application, Button } from 'react-rainbow-components';
-import {lightTheme, darkTheme} from '../utils/themes'
+import {lightTheme} from '../utils/themes'
 
 
-function Home({history, props}) {
+const Home = ({history, props}) => {
   const [data, setData] = useState([])
   const [selected, setSelected] = useState([])
 
@@ -38,23 +38,21 @@ function Home({history, props}) {
             rowNumberOffset={0} 
             onRowSelection={data => setSelected(data)}>
               
-              <Column header="First Name" field='firstName' />
-              <Column header="Last Name" field="lastName"  />
-              <Column header="Email" field="email" />
-              <Column header="D.O.B." field="dob" />
+            <Column header="First Name" field='firstName' />
+            <Column header="Last Name" field="lastName"  />
+            <Column header="Email" field="email" />
+            <Column header="D.O.B." field="dob" />
 
-              <Column type="action">
-                <MenuItem label="Edit" onClick={(event, data) => history.push(`/edit/${data.id}`)} />
-                <MenuItem label="Delete" onClick={(event, data) => {deleteUser(`${data.id}`) }}
-                />
-              </Column>
+            <Column type="action">
+              <MenuItem label="Edit" onClick={(event, data) => history.push(`/edit/${data.id}`)} />
+              <MenuItem label="Delete" onClick={(event, data) => {deleteUser(`${data.id}`) }}
+              />
+            </Column>
           </TableWithBrowserPagination>
         </Card>
       </Application>
     </div>
   )
 }
-
-
 
 export default withRouter(Home)
