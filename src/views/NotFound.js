@@ -16,11 +16,10 @@ const NotFound = ({history, props}) => {
     <div className="main">
       <Navbar selection={selected} />
       <Card className="error-card">
-        <div>
+        <div className="text-center">
           <FontAwesomeIcon icon={faExclamationTriangle} className="error" />
           <h3 className="text-center mt-5">Page not found</h3>
           <h5 className="text-center mt-2">Please refresh</h5>
-
         </div>
       </Card>
     </div>
