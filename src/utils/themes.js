@@ -1,7 +1,7 @@
 export const lightTheme  = {
     rainbow: {
         palette: {
-            mainBackground: 'rgba(255, 255, 255, 0.40)',
+            mainBackground: 'rgba(255, 255, 255, 0.30)',
             text: '#8d2d85',
             brand: '#0C72D9'
         },
